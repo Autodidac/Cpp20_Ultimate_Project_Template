@@ -1,5 +1,7 @@
-# epoch engine
-This is a backup for 1.5 since my pc is unstable and I lose operating system on reboots
+# Cpp20_Ultimate_Repo_Template_2025
+The Ultimate Hello World - Application/Library Project Template For C++20
+Contains scripts and build systems to build with virtually any Compiler on any IDE, Code Editor, or Terminal
+
 
 
 

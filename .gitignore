@@ -39,20 +39,17 @@ vcpkg_installed/
 Bin/*
 .vs/
 backup/
-vulkanapp1/x64/
-VulkanApplication1/x64/
-VulkanStaticLib1/x64/
+app1/x64/
+Application1/x64/
+StaticLib1/x64/
 
-vulkanapp1/Debug
-VulkanApplication1/Debug
-VulkanStaticLib1/Debug
+app1/Debug
+Application1/Debug
+StaticLib1/Debug
 
-vulkanapp1/Release
-VulkanApplication1/Release
-VulkanStaticLib1/Release
-
-VulkanSDK/1.3.275.0
-VulkanSDK/vulkansdk-linux-x86_64-1.3.275.0.tar.xz
+app1/Release
+Application1/Release
+StaticLib1/Release
 
 *.pdb
 *.idb
