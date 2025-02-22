@@ -6,10 +6,8 @@
       "type": "shell",
       "command": "cmake",
       "args": [
-        "-S",
-        ".",
-        "-B",
-        "Bin/GCC Release",
+        "-S", ".",
+        "-B", "Bin/GCC-Release",
         "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/built",
         "-DCMAKE_TOOLCHAIN_FILE=/home/dude/Documents/repos/vcpkg/scripts/buildsystems/vcpkg.cmake",
         "-DCMAKE_BUILD_TYPE=Release",
@@ -30,8 +28,7 @@
       "type": "shell",
       "command": "cmake",
       "args": [
-        "--build",
-        "Bin/build_gcc"
+        "--build", "Bin/GCC-Release"
       ],
       "dependsOn": "Configure (GCC)",
       "group": {
@@ -45,10 +42,8 @@
       "type": "shell",
       "command": "cmake",
       "args": [
-        "-S",
-        ".",
-        "-B",
-        "Bin/Clang-Release",
+        "-S", ".",
+        "-B", "Bin/Clang-Release",
         "-DCMAKE_INSTALL_PREFIX=${workspaceFolder}/built",
         "-DCMAKE_TOOLCHAIN_FILE=/home/dude/Documents/repos/vcpkg/scripts/buildsystems/vcpkg.cmake",
         "-DCMAKE_BUILD_TYPE=Release",
@@ -69,8 +64,7 @@
       "type": "shell",
       "command": "cmake",
       "args": [
-        "--build",
-        "Bin/build_clang"
+        "--build", "Bin/Clang-Release"
       ],
       "dependsOn": "Configure (Clang)",
       "group": "build",
@@ -81,10 +75,8 @@
       "type": "shell",
       "command": "cmake",
       "args": [
-        "--build",
-        "Bin/build_gcc",
-        "--target",
-        "clean"
+        "--build", "Bin/GCC-Release",
+        "--target", "clean"
       ],
       "group": "none",
       "problemMatcher": []
@@ -94,10 +86,8 @@
       "type": "shell",
       "command": "cmake",
       "args": [
-        "--build",
-        "Bin/build_clang",
-        "--target",
-        "clean"
+        "--build", "Bin/Clang-Release",
+        "--target", "clean"
       ],
       "group": "none",
       "problemMatcher": []
@@ -107,10 +97,7 @@
       "type": "shell",
       "command": "rm",
       "args": [
-        "-rf",
-        "Bin/build_gcc",
-        "Bin/build_clang",
-        "vcpkg_installed"
+        "-rf", "Bin/GCC-Release", "Bin/Clang-Release", "${workspaceFolder}/vcpkg_installed"
       ],
       "group": "none",
       "problemMatcher": []
@@ -134,7 +121,7 @@
       "command": "configure",
       "preset": "${command:cmake.activeConfigurePresetName}",
       "problemMatcher": [],
-      "detail": "CMake template configure task"
+      "detail": "CMake Tools template configure task"
     },
     {
       "type": "cmake",
@@ -146,7 +133,7 @@
       "preset": "${command:cmake.activeBuildPresetName}",
       "group": "build",
       "problemMatcher": [],
-      "detail": "CMake template build task"
+      "detail": "CMake Tools template build task"
     },
     {
       "type": "cmake",
@@ -154,7 +141,7 @@
       "command": "clean",
       "preset": "${command:cmake.activeBuildPresetName}",
       "problemMatcher": [],
-      "detail": "CMake template clean task"
+      "detail": "CMake Tools template clean task"
     },
     {
       "type": "cmake",
@@ -162,7 +149,7 @@
       "command": "install",
       "preset": "${command:cmake.activeBuildPresetName}",
       "problemMatcher": [],
-      "detail": "CMake template install task"
+      "detail": "CMake Tools template install task"
     }
   ]
 }

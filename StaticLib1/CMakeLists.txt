@@ -11,8 +11,8 @@ target_include_directories(StaticLib1
 
 # Add all the source files for the static library
 target_sources(StaticLib1 PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/StaticLib1.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/core.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils.cpp
 )
 
 # Find necessary packages

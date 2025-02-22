@@ -1,7 +1,18 @@
+
 # Add executable
 add_executable(Application1
-   Application1.cpp
+    src/main.cpp
+    src/utils.cpp
+    include/utils.hpp
 )
+# Include headers and link to library
+target_include_directories(Application1 PRIVATE 
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/include
+    ${VCPKG_INSTALLATION_ROOT}/x64-linux/include
+    ${VCPKG_INSTALLATION_ROOT}/x64-linux/lib
+)
+
 
 # Link StaticLib1
 target_link_libraries(Application1 PRIVATE
@@ -25,7 +36,7 @@ endif()
 
 # Additional linker options for GNU/Clang
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    target_link_options(StaticLib1 PRIVATE -Wl,--allow-shlib-undefined)
+   # target_link_options(StaticLib1 PRIVATE -Wl,--allow-shlib-undefined)
 endif()
 
 # Installation rule for the executable

@@ -1,3 +1,5 @@
+[![wakatime](https://wakatime.com/badge/user/17eacdf5-0954-4233-89e5-cf09a2e230eb/project/f493991c-890e-48ab-9625-4bdd1e9e68c7.svg)](https://wakatime.com/badge/user/17eacdf5-0954-4233-89e5-cf09a2e230eb/project/f493991c-890e-48ab-9625-4bdd1e9e68c7)
+
 # Cpp20_Ultimate_Repo_Template_2025
 The Ultimate Hello World - Application/Library Project Template For C++20
 Contains scripts and build systems to build with virtually any Compiler on any IDE, Code Editor, or Terminal

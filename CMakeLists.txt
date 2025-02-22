@@ -32,24 +32,10 @@ endif()
 
 # Include sub-projects
 add_subdirectory("cmakeapp1")
-#add_subdirectory("app1")
+add_subdirectory("app1")
 
-#add_subdirectory ("VulkanApplication1")
-#add_subdirectory ("VulkanStaticLib1")
-
-
-# Set compile options
-target_compile_options(${PROJECT_NAME}
-    PRIVATE
-        $<$<CXX_COMPILER_ID:GNU>:-Wall -Wextra -Wpedantic>
-        $<$<CXX_COMPILER_ID:MSVC>:/W4>
-)
-
-# Fix missing symbols for GNU/Clang
-if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    target_link_options(${PROJECT_NAME} PRIVATE -Wl,--allow-shlib-undefined)
-endif()
-
+#add_subdirectory ("Application1")
+#add_subdirectory ("StaticLib1")
 
 
 
