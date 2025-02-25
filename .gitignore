@@ -31,12 +31,15 @@
 *.out
 *.app
 
+Debug/
+Release/
+x64/*
 out/
 build_clang/
 built/
 build_gcc/
 vcpkg_installed/
-Bin/*
+bin/*
 .vs/
 backup/
 app1/x64/

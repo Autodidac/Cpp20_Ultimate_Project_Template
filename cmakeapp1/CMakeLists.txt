@@ -19,7 +19,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Enforce install location at top-level (in the project root)
-set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/built" CACHE PATH "Install path prefix" FORCE)
+set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}\\built" CACHE PATH "Install path prefix" FORCE)
 message(STATUS "Install Prefix: ${CMAKE_INSTALL_PREFIX}")
 
 
@@ -35,6 +35,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${VCPKG_INSTALLATION_ROOT}/x64-linux/include
     ${VCPKG_INSTALLATION_ROOT}/x64-linux/lib
+    ${VCPKG_INSTALLATION_ROOT}/x64-windows/include
+    ${VCPKG_INSTALLATION_ROOT}/x64-windows/lib
 )
 
 # Set compile options

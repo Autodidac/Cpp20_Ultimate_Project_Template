@@ -1,3 +1,10 @@
+
+# Set the vcpkg toolchain file
+if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+  set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg_installed/scripts/buildsystems/vcpkg.cmake"
+      CACHE STRING "Vcpkg toolchain file")
+endif()
+
 # Create executable for vulkanapp1
 add_executable(app1
     src/main.cpp

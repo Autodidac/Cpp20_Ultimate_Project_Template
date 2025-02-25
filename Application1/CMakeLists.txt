@@ -1,10 +1,9 @@
 
 # Add executable
 add_executable(Application1
-    src/main.cpp
-    src/utils.cpp
-    include/utils.hpp
+    src/Application1.cpp
 )
+
 # Include headers and link to library
 target_include_directories(Application1 PRIVATE 
     ${CMAKE_SOURCE_DIR}/src
@@ -13,13 +12,13 @@ target_include_directories(Application1 PRIVATE
     ${VCPKG_INSTALLATION_ROOT}/x64-linux/lib
 )
 
+# Specify include directories for Application1
+target_include_directories(Application1 PRIVATE ${CMAKE_SOURCE_DIR}../../StaticLib1/include)
 
 # Link StaticLib1
 target_link_libraries(Application1 PRIVATE
     StaticLib1
 )
-# Specify include directories for Application1
-target_include_directories(Application1 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Use shared vcpkg installation directories
 target_include_directories(Application1 PRIVATE

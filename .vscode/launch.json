@@ -6,7 +6,7 @@
       "request": "launch",
       "name": "CMake: Script debugging - linux",
       "cmakeDebugType": "script",
-      "scriptPath": "${workspaceFolder}/Bin/Ninja-Debug/cmakeapp1/cmake_install.cmake"
+      "scriptPath": "${workspaceFolder}/bin/Ninja-Debug/cmakeapp1/cmake_install.cmake"
     }
   ]
 }
