@@ -1,4 +1,4 @@
-[![wakatime](https://wakatime.com/badge/github/Autodidac/Cpp20_Ultimate_Project_Template.svg)](https://wakatime.com/badge/github/Autodidac/Cpp20_Ultimate_Project_Template)
+26 hours + [![wakatime](https://wakatime.com/badge/github/Autodidac/Cpp20_Ultimate_Project_Template.svg)](https://wakatime.com/badge/github/Autodidac/Cpp20_Ultimate_Project_Template)
 
 # Cpp20_Ultimate_Project_Template
 The Ultimate Hello World - Cross Platform, Multi Editor Enabled Application/Library Project Template For C++20
