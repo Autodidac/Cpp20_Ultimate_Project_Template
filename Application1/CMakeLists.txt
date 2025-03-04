@@ -13,11 +13,15 @@ target_include_directories(Application1 PRIVATE
 )
 
 # Specify include directories for Application1
-target_include_directories(Application1 PRIVATE ${CMAKE_SOURCE_DIR}../../StaticLib1/include)
+target_include_directories(Application1 PRIVATE 
+    ${CMAKE_SOURCE_DIR}../../StaticLib1
+    ${CMAKE_SOURCE_DIR}../../StaticLib1/include
+)
 
 # Link StaticLib1
 target_link_libraries(Application1 PRIVATE
     StaticLib1
+    fmt
 )
 
 # Use shared vcpkg installation directories
