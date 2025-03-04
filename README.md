@@ -5,7 +5,8 @@ The Ultimate Hello World - Cross Platform, Multi Editor Enabled Application/Libr
 Contains scripts and build systems to build with virtually any Compiler on any IDE, Code Editor, or Terminal
 
 
-## NOTICE : You'll want to immediately change the license info upon use of this template repo, thank you!
+## NOTICE : You'll want to immediately change the license info upon use of this template repo, make it your own you have permission, thank you! I just don't want anything coming back on me otherwise it's already probably mostly public domain anyways, enjoy!
+all that I ask is that you DO change the license to your own name or company, pseudonym.. so that you make it your OWN template, and a simple acknowledgement is appreciated, take care! 
 
 
 
