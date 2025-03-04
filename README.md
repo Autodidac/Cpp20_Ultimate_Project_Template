@@ -37,10 +37,7 @@ Project.sln - Solution File in the Main Directory
 #### With VSCode
 tasks.json
 
-It will actually build and use vcpkg manifest despite some of the build system errors, that's because it uses ninja or cl on windows,
-but it will use gcc or clang on linux just fine. it also generates full msvc projects for some reason, which seems useful. The Projects
-can stay but I will try to remove these issues in the future, for now vscode is linux focused because we have msvc on windows anyway.
-
+all builds seem to now be working, report anything if you find it. you can use gcc and clang from tasks or the cmake build in vscode and variants 
 
 
 ### On Linux
@@ -49,8 +46,8 @@ can stay but I will try to remove these issues in the future, for now vscode is 
 
 
 #### With VSCode or VSCodium on Linux!
-Uses a CMake Build system you can run tasks.json task, or build buttons at the bottom of the CMake Extension
-Or better yet Build And Run From Command-Line Terminal below!
+Uses a CMake Build system, but you can also run tasks.json task, or build buttons at the bottom of the CMake Extension
+Or Build And Run From Command-Line Terminal below!
 
 
 
@@ -58,14 +55,17 @@ Or better yet Build And Run From Command-Line Terminal below!
 #### Built-in Fully Autonomous Build Scripts - Install VulkanSDK, Dependencies, and Compile Directly from Commandline in Linux Terminal
 you will need to chmod -x the following to use:
 
+```bash
 ./build.sh gcc Release
 ./install.sh gcc Release
 ./run.sh
+```
 
 or:
 
+```bash
 ./build.sh clang Debug
 ./install.sh clang Debug
+```
 
-
-Notice: the difference in compiler in the Debug builds, clang vs gcc which ever compiler you prefer to use.
+Notice Above: the difference in compiler in the Debug, and Release builds, clang vs gcc, which ever compiler you prefer to use.
