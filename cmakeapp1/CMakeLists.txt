@@ -48,7 +48,7 @@ target_compile_options(${PROJECT_NAME}
 
 
 # Find and link dependencies
-find_package(fmt CONFIG QUIET)
+find_package(fmt CONFIG REQUIRED)
 find_package(Threads QUIET)
 # Link fmt and threads
 

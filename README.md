@@ -1,4 +1,4 @@
-[![wakatime](https://wakatime.com/badge/user/17eacdf5-0954-4233-89e5-cf09a2e230eb/project/f493991c-890e-48ab-9625-4bdd1e9e68c7.svg)](https://wakatime.com/badge/user/17eacdf5-0954-4233-89e5-cf09a2e230eb/project/f493991c-890e-48ab-9625-4bdd1e9e68c7)
+[![wakatime](https://wakatime.com/badge/github/Autodidac/Cpp20_Ultimate_Project_Template.svg)](https://wakatime.com/badge/github/Autodidac/Cpp20_Ultimate_Project_Template)
 
 # CPP20_Ultimate_Project_Template
 The Ultimate Hello World - Cross Platform, Multi Editor Enabled Application/Library Project Template For C++20
