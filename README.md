@@ -1,6 +1,6 @@
 [![wakatime](https://wakatime.com/badge/github/Autodidac/Cpp20_Ultimate_Project_Template.svg)](https://wakatime.com/badge/github/Autodidac/Cpp20_Ultimate_Project_Template)
 
-# CPP20_Ultimate_Project_Template
+# Cpp20_Ultimate_Project_Template
 The Ultimate Hello World - Cross Platform, Multi Editor Enabled Application/Library Project Template For C++20
 Contains scripts and build systems to build with virtually any Compiler on any IDE, Code Editor, or Terminal
 
