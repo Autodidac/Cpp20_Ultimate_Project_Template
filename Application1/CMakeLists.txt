@@ -1,4 +1,10 @@
 
+# Set the vcpkg toolchain file
+if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+  set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg_installed/scripts/buildsystems/vcpkg.cmake"
+      CACHE STRING "Vcpkg toolchain file")
+endif()
+
 # Add executable
 add_executable(Application1
     src/Application1.cpp
@@ -10,6 +16,8 @@ target_include_directories(Application1 PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${VCPKG_INSTALLATION_ROOT}/x64-linux/include
     ${VCPKG_INSTALLATION_ROOT}/x64-linux/lib
+    ${VCPKG_INSTALLATION_ROOT}/x64-windows/include
+    ${VCPKG_INSTALLATION_ROOT}/x64-windows/lib
 )
 
 # Specify include directories for Application1
@@ -24,10 +32,6 @@ target_link_libraries(Application1 PRIVATE
     fmt
 )
 
-# Use shared vcpkg installation directories
-target_include_directories(Application1 PRIVATE
-    ${VCPKG_INSTALLATION_ROOT}/x64-linux/include
-)
 target_link_directories(Application1 PRIVATE
     ${VCPKG_INSTALLATION_ROOT}/x64-linux/lib
 )
