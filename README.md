@@ -48,6 +48,11 @@ Platform-specific setup steps (Visual Studio, VS Code tasks, Linux package manag
 - [docs/windows.md](docs/windows.md)
 - [docs/linux.md](docs/linux.md)
 
+Additional high-level documentation lives in:
+- [docs/roadmap.md](docs/roadmap.md) for upcoming enhancements and priorities.
+- [docs/api-overview.md](docs/api-overview.md) for bundled utilities, abstractions, and extension points.
+- [docs/CHANGELOG.md](docs/CHANGELOG.md) for release notes and versioning strategy.
+
 ## Environment prerequisites
 - **vcpkg**: Required for dependency resolution. Set either `VCPKG_ROOT` or `VCPKG_INSTALLATION_ROOT` before configuring, or place a local bootstrap under `vcpkg_installed/`.
 - **Vulkan SDK**: Install the Vulkan SDK for graphics samples or libraries that rely on Vulkan. Ensure `VULKAN_SDK` is exported and its `Bin` directory is in `PATH`.
@@ -77,6 +82,12 @@ All helper scripts reside at the repository root and are POSIX shell compatible 
 2. **Add CMake presets**: Edit `CMakePresets.json` to encode the new build matrix for IDEs that support presets.
 3. **Update automation scripts**: Mirror the new compiler identifier in `build.sh`, `install.sh`, and `run.sh` so the end-to-end flow is consistent.
 4. **Document the workflow**: Add a subsection to the appropriate platform guide (`docs/*.md`) describing unique requirements or environment variables.
+
+## Contribution guidelines
+- **Roadmap**: When proposing or completing notable work, update [docs/roadmap.md](docs/roadmap.md) to reflect new priorities or delivered items.
+- **API overview**: Document new libraries, utilities, or extension points in [docs/api-overview.md](docs/api-overview.md) with usage notes.
+- **Changelog**: Record user-visible changes under the `[Unreleased]` section of [docs/CHANGELOG.md](docs/CHANGELOG.md) and promote entries during releases.
+- **Cross-links**: Ensure new documentation is linked from the README or relevant guides so contributors can discover it easily.
 
 ## Licensing
 This template ships with the default license for demonstration purposes. Replace it with your organization’s preferred license before distributing derived work.
