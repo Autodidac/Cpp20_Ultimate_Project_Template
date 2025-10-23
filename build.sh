@@ -1,36 +1,40 @@
 #!/bin/bash
-# Usage: ./build.sh [gcc|clang] [Debug|Release]
+# Usage: ./build.sh [gcc|clang|msvc] [Debug|Release]
 
-# Set the installation prefix (this remains the same across build and install)
-INSTALL_PREFIX="${PWD}/built"
+set -euo pipefail
 
-# Select compiler and assign a friendly name for the build folder
-if [ "$1" == "gcc" ]; then
-  COMPILER_C="gcc"
-  COMPILER_CXX="g++"
-  COMPILER_NAME="GCC"
-elif [ "$1" == "clang" ]; then
-  COMPILER_C="clang"
-  COMPILER_CXX="clang++"
-  COMPILER_NAME="Clang"
-else
-  echo "Usage: $0 [gcc|clang] [Debug|Release]"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$SCRIPT_DIR"
+CONFIGURE_SCRIPT="$PROJECT_ROOT/cmake/configure.sh"
+
+if [[ $# -lt 1 ]]; then
+  echo "Usage: $0 [gcc|clang|msvc] [Debug|Release]" >&2
   exit 1
 fi
 
-# Set build type (default to Debug if not provided)
-if [ -z "$2" ]; then
-  BUILD_TYPE="Debug"
-else
-  BUILD_TYPE="$2"
+COMPILER="$1"
+BUILD_TYPE="${2:-Debug}"
+
+case "$COMPILER" in
+  gcc)
+    COMPILER_NAME="GCC"
+    ;;
+  clang)
+    COMPILER_NAME="Clang"
+    ;;
+  msvc)
+    COMPILER_NAME="MSVC"
+    ;;
+  *)
+    echo "Usage: $0 [gcc|clang|msvc] [Debug|Release]" >&2
+    exit 1
+    ;;
+esac
+
+BUILD_DIR="$PROJECT_ROOT/Bin/${COMPILER_NAME}-${BUILD_TYPE}"
+
+if [[ ! -f "$BUILD_DIR/CMakeCache.txt" ]]; then
+  "$CONFIGURE_SCRIPT" "$COMPILER" "$BUILD_TYPE"
 fi
 
-# Define the build directory including both compiler and build type
-BUILD_DIR="Bin/${COMPILER_NAME}-${BUILD_TYPE}"
-
-# Create the build and install directories if they don't exist
-mkdir -p "$BUILD_DIR"
-mkdir -p "$INSTALL_PREFIX"
-
-# Build the project (verbose output)
-cmake --build "$BUILD_DIR" --verbose
+cmake --build "$BUILD_DIR" --config "$BUILD_TYPE" --verbose

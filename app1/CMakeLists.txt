@@ -8,24 +8,10 @@ endif()
 # Create executable for vulkanapp1
 add_executable(app1
     src/main.cpp
-    src/utils.cpp
-    include/utils.hpp
-)
-
-find_package(fmt CONFIG REQUIRED)
-
-# Include headers and link to library
-target_include_directories(app1 PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/src
-    ${VCPKG_INSTALLATION_ROOT}/x64-linux/include
-)
-
-target_link_directories(app1 PRIVATE
-    ${VCPKG_INSTALLATION_ROOT}/x64-linux/lib
 )
 
 target_link_libraries(app1 PRIVATE
-    fmt
+    safe_io
 )
 
 # Installation rule
