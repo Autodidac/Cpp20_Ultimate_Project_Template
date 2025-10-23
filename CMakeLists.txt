@@ -44,6 +44,7 @@ else()
 endif()
 
 # Include sub-projects
+add_subdirectory("shared/safe_io")
 add_subdirectory("cmakeapp1")
 add_subdirectory("app1")
 

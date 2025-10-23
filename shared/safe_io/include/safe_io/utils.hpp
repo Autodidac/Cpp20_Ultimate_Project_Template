@@ -1,8 +1,7 @@
-// utils.hpp
 #pragma once
 
-#include <iostream>
 #include <fmt/core.h>
+#include <iostream>
 
 namespace safe_io
 {
@@ -16,4 +15,4 @@ namespace safe_io
     {
         out() << fmt::vformat(fmt_str, fmt::make_format_args(args...)) << '\n';
     }
-}
+} // namespace safe_io

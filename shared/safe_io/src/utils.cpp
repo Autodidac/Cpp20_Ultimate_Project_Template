@@ -1,11 +1,11 @@
-// utils.cpp
-#include "../include/utils.hpp"
+#include "safe_io/utils.hpp"
+
+#include <iostream>
 
 namespace safe_io
 {
-    // Implementation of out() function
     std::ostream& out() noexcept
     {
         return std::cout;
     }
-}
+} // namespace safe_io

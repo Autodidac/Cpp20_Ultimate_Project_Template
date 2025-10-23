@@ -26,17 +26,6 @@ message(STATUS "Install Prefix: ${CMAKE_INSTALL_PREFIX}")
 # Add executable
 add_executable(${PROJECT_NAME}
     src/main.cpp
-    src/utils.cpp
-    include/utils.hpp
-)
-# Include headers and link to library
-target_include_directories(${PROJECT_NAME} PRIVATE 
-    ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/include
-    ${VCPKG_INSTALLATION_ROOT}/x64-linux/include
-    ${VCPKG_INSTALLATION_ROOT}/x64-linux/lib
-    ${VCPKG_INSTALLATION_ROOT}/x64-windows/include
-    ${VCPKG_INSTALLATION_ROOT}/x64-windows/lib
 )
 
 # Set compile options
@@ -48,28 +37,17 @@ target_compile_options(${PROJECT_NAME}
 
 
 # Find and link dependencies
-find_package(fmt CONFIG REQUIRED)
 find_package(Threads QUIET)
-# Link fmt and threads
 
+target_link_libraries(${PROJECT_NAME} PRIVATE safe_io)
 
-if(fmt_FOUND)
-    message(STATUS "Using fmt.")
-
-    target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt Threads::Threads)
-else()
-    message(FATAL_ERROR "Required packages (fmt) not found. Please install them via your package manager or vcpkg.")
+if(Threads_FOUND)
+    target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
 endif()
 
 # Install rules
 install(TARGETS ${PROJECT_NAME}
     RUNTIME DESTINATION bin
-)
-
-# Ensure includes are installed
-install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/
-    DESTINATION include
-    FILES_MATCHING PATTERN "*.hpp"
 )
 
 # Ensure libraries are installed (if applicable)
